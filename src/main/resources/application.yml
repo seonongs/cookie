@@ -1,0 +1,44 @@
+
+server:
+  port: 8080
+  error:
+    include-exception: true
+    include-stacktrace: always
+    whitelabel:
+      enabled: false
+
+spring:
+  datasource:
+    driver-class-name: org.mariadb.jdbc.Driver
+    url: jdbc:mariadb://pronongs.iptime.org:3306/board?characterEncoding=UTF-8&serverTimezone=Asia/Seoul&passwordCharacterEncoding=UTF-8
+
+    username: maria
+    password: maria
+
+  # http://119.203.225.10:8080
+
+  jpa:
+    database-platform: org.hibernate.dialect.MariaDBDialect
+    open-in-view: false
+    show-sql: true
+    hibernate:
+      format_sql: true
+      ddl-auto: update
+
+  devtools:
+    livereload:
+      enabled: true
+  freemarker:
+    cache: false
+  thymeleaf:
+    cache: false
+
+logging:
+  level:
+    org:
+      hibernate:
+        SQL: DEBUG
+        type:
+          descriptor:
+            sql:
+              BasicBinder: TRACE
